@@ -1,0 +1,118 @@
+@charset 'UTF-8' ;
+
+:root {
+  /* Layout */
+  --l_maxWidth : 1440px ;
+
+  /* Fonts */
+  --f_fontSize : 14px ;
+  --f_fontSizeMax : 25px ;
+  --f_fontWeight : 400 ;
+  --f_lineHeight : 1.5 ;
+  --f_family : 'Montserrat' , sans-serif ;
+  --f_family2 : 'Fraunces' , serif ;
+
+  /* Colors */
+  
+}
+
+html { font-size : var( --f_fontSize ) ; }
+
+* {
+  margin : 0 ;
+  padding : 0 ;
+}
+
+*, **::before , *::after { box-sizing : border-box ; }
+
+body {
+  min-height : 100dvh ;
+  font-size : clamp( 100% , 1rem + .75rem , var( --f_fontSizeMax ) )
+} ;
+
+h1, h2, h3, h4, h5, h6 { text-wrap : balanca ; }
+
+p { text-wrap : pretty ; }
+
+button { all : unset ; }
+
+button , input, textarea , select { font : inherit ; }
+
+img{
+	max-width : 100% ;
+	max-inline-size : 100% ;
+	block-size : auto ;
+	height : auto ;
+	object-fit : cover / contain ;
+	object-position : 50% 50% ;
+}
+
+video, svg {
+  height : auto ;
+  width : 100% ;
+}
+
+/* Body */
+.Body {
+  min-height : 100vh ;
+
+  margin : 0 auto ;
+  max-width : var( --l_maxWidth ) ;
+
+  display : flex ;
+  flex-flow : column nowrap ;
+  align-items : center ;
+  justify-content : center ;
+
+}
+
+/* Main */
+.Main {
+  display : flex ;
+  flex-direction : row no-wrap ;
+  align-items : center ;
+  justify-content : center ;
+}
+
+.Main .product {}
+
+.Main .product .product__subtitle {}
+
+.Main .product .product__title {}
+
+.Main .product .product__description {}
+
+.Main .product .product__price {}
+
+.Main .product .product__price--currency {}
+
+.Main .product .product__price--compare {}
+
+.Main .product .product__btn {}
+
+.Main .picture .product__btn--active {}
+
+
+/* Footer */
+.Footer {}
+
+
+
+/* MediaQuery */
+
+@media ( prefers-reduce-motion : reduce ){
+	*, *::before , *::after {
+		animation-duration : 0.01 !important ;
+		animation-iteration-count : 1 !important ;
+		transition-duration : 0.01ms !important ;
+		scroll-behavior : auto !important ;
+		transition : none ;
+	}
+}
+
+/* Mobile */
+@media screen and ( max-width => 375px ) {
+  .Body {
+    flex-direction : column no-wrap ;
+  }
+}
